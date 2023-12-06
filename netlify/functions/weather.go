@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-  "github.com/aws/aws-lambda-go/events"
-  "github.com/aws/aws-lambda-go/lambda"
+  	"github.com/aws/aws-lambda-go/events"
+  	"github.com/aws/aws-lambda-go/lambda"
 )
 
 type Weather struct {
@@ -74,15 +74,15 @@ func GetWeather(l string, w *Weather) error {
 }
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
-  // Your server-side functionality
-  w := Weather{}
-  GetWeather("London", &w)
-  pretty, err := w.display(true)
+	// Your server-side functionality
+	w := Weather{}
+	GetWeather("London", &w)
+	pretty, err := w.display(true)
 	if err == nil {
 		return string(pretty))
-  } else {
-    return "failed"
-  } 
+	} else {
+		return "failed"
+	} 
 }
 
 func main() {
