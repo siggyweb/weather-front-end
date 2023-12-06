@@ -79,7 +79,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	GetWeather("London", &w)
 	pretty, err := w.display(true)
 	if err == nil {
-		return string(pretty))
+		return string(pretty)
 	} else {
 		return "failed"
 	} 
